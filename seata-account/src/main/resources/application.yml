@@ -1,0 +1,15 @@
+server:
+  port: 8092
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/seata?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: 123456
+  application:
+    name: seata-account
+  profiles:
+    active: dev
+mybatis-plus:
+  type-aliases-package: cn.chenqi.seata.account

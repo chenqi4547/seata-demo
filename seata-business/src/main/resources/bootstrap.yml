@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: seata-business
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: http://127.0.0.1:8848
+      username: nacos
+      password: nacos
+      config:
+        namespace: 464791e4-5b54-40fb-8811-3ce3d84191eb
+        file-extension: yml
+      discovery:
+        namespace: 464791e4-5b54-40fb-8811-3ce3d84191eb
