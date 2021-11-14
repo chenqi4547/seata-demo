@@ -10,4 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface StockService extends IService<Stock> {
 
+    void deduct(String commodityCode, Integer count);
 }

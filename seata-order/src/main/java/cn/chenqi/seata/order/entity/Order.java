@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.math.BigDecimal;
+
 import lombok.Data;
 
 /**
@@ -24,19 +26,19 @@ public class Order implements Serializable {
      * 
      */
     @TableField(value = "order_no")
-    private String order_no;
+    private String orderNo;
 
     /**
      * 
      */
     @TableField(value = "user_id")
-    private String user_id;
+    private String userId;
 
     /**
      * 
      */
     @TableField(value = "commodity_code")
-    private String commodity_code;
+    private String commodityCode;
 
     /**
      * 
@@ -48,7 +50,7 @@ public class Order implements Serializable {
      * 
      */
     @TableField(value = "amount")
-    private Double amount;
+    private BigDecimal amount;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -66,9 +68,9 @@ public class Order implements Serializable {
         }
         Order other = (Order) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOrder_no() == null ? other.getOrder_no() == null : this.getOrder_no().equals(other.getOrder_no()))
-            && (this.getUser_id() == null ? other.getUser_id() == null : this.getUser_id().equals(other.getUser_id()))
-            && (this.getCommodity_code() == null ? other.getCommodity_code() == null : this.getCommodity_code().equals(other.getCommodity_code()))
+            && (this.getOrderNo() == null ? other.getOrderNo() == null : this.getOrderNo().equals(other.getOrderNo()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getCommodityCode() == null ? other.getCommodityCode() == null : this.getCommodityCode().equals(other.getCommodityCode()))
             && (this.getCount() == null ? other.getCount() == null : this.getCount().equals(other.getCount()))
             && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()));
     }
@@ -78,9 +80,9 @@ public class Order implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOrder_no() == null) ? 0 : getOrder_no().hashCode());
-        result = prime * result + ((getUser_id() == null) ? 0 : getUser_id().hashCode());
-        result = prime * result + ((getCommodity_code() == null) ? 0 : getCommodity_code().hashCode());
+        result = prime * result + ((getOrderNo() == null) ? 0 : getOrderNo().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getCommodityCode() == null) ? 0 : getCommodityCode().hashCode());
         result = prime * result + ((getCount() == null) ? 0 : getCount().hashCode());
         result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
         return result;
@@ -93,9 +95,9 @@ public class Order implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", order_no=").append(order_no);
-        sb.append(", user_id=").append(user_id);
-        sb.append(", commodity_code=").append(commodity_code);
+        sb.append(", order_no=").append(orderNo);
+        sb.append(", user_id=").append(userId);
+        sb.append(", commodity_code=").append(commodityCode);
         sb.append(", count=").append(count);
         sb.append(", amount=").append(amount);
         sb.append(", serialVersionUID=").append(serialVersionUID);

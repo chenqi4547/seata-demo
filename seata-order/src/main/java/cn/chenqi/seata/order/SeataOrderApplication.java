@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "cn.chenqi.seata.order")
+@MapperScan(basePackages = "cn.chenqi.seata.order.mapper")
 public class SeataOrderApplication {
 
     public static void main(String[] args) {

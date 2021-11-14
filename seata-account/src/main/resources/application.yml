@@ -13,3 +13,65 @@ spring:
     active: dev
 mybatis-plus:
   type-aliases-package: cn.chenqi.seata.account
+
+seata:
+  enabled: true
+  application-id: seata-account
+  tx-service-group: seata_account
+  client:
+    rm:
+      async-commit-buffer-limit: 1000
+      report-retry-count: 5
+      table-meta-check-enable: false
+      report-success-enable: false
+      lock:
+        retry-interval: 10
+        retry-times: 30
+        retry-policy-branch-rollback-on-conflict: true
+    tm:
+      commit-retry-count: 5
+      rollback-retry-count: 5
+    undo:
+      data-validation: true
+      log-serialization: jackson
+      log-table: undo_log
+  service:
+    vgroup-mapping:
+      seata_account: default
+    grouplist:
+      default: 127.0.0.1:8091
+    #enable-degrade: false
+    #disable-global-transaction: false
+  transport:
+    shutdown:
+      wait: 3
+    thread-factory:
+      boss-thread-prefix: NettyBoss
+      worker-thread-prefix: NettyServerNIOWorker
+      server-executor-thread-prefix: NettyServerBizHandler
+      share-boss-worker: false
+      client-selector-thread-prefix: NettyClientSelector
+      client-selector-thread-size: 1
+      client-worker-thread-prefix: NettyClientWorkerThread
+      worker-thread-size: default
+      boss-thread-size: 1
+    type: TCP
+    server: NIO
+    heartbeat: true
+    serialization: seata
+    compressor: none
+    enable-client-batch-send-request: true
+  config:
+    type: nacos
+    nacos:
+      namespace: 464791e4-5b54-40fb-8811-3ce3d84191eb
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+  registry:
+    type: nacos
+    nacos:
+      cluster: default
+      server-addr: 127.0.0.1:8848
+      namespace: 464791e4-5b54-40fb-8811-3ce3d84191eb
+  log:
+    exception-rate: 100

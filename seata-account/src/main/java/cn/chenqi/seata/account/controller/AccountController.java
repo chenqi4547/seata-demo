@@ -2,12 +2,11 @@ package cn.chenqi.seata.account.controller;
 
 import cn.chenqi.seata.account.entity.Account;
 import cn.chenqi.seata.account.service.AccountService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.seata.core.context.RootContext;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 
 /**
  * @Description : TODO
@@ -26,5 +25,12 @@ public class AccountController {
     public Account getAccountById(@PathVariable Integer id) {
         Account account = accountService.getById(id);
         return account;
+    }
+
+    @GetMapping
+    @RequestMapping("/debit")
+    public void debit(@RequestParam String userId, @RequestParam BigDecimal orderMoney) {
+        System.out.println("account XID :" + RootContext.getXID());
+        accountService.debit(userId, orderMoney);
     }
 }

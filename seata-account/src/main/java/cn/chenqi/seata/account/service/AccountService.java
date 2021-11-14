@@ -3,6 +3,8 @@ package cn.chenqi.seata.account.service;
 import cn.chenqi.seata.account.entity.Account;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
+
 /**
 * @author chenqi
 * @description 针对表【t_account】的数据库操作Service
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface AccountService extends IService<Account> {
 
+    void debit(String userId, BigDecimal orderMoney);
 }

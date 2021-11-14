@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("cn.chenqi.seata.storage")
+@MapperScan("cn.chenqi.seata.storage.mapper")
 public class SeataStorageApplication {
 
     public static void main(String[] args) {

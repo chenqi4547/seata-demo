@@ -24,7 +24,7 @@ public class Stock implements Serializable {
      * 
      */
     @TableField(value = "commodity_code")
-    private String commodity_code;
+    private String commodityCode;
 
     /**
      * 
@@ -54,7 +54,7 @@ public class Stock implements Serializable {
         }
         Stock other = (Stock) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getCommodity_code() == null ? other.getCommodity_code() == null : this.getCommodity_code().equals(other.getCommodity_code()))
+            && (this.getCommodityCode() == null ? other.getCommodityCode() == null : this.getCommodityCode().equals(other.getCommodityCode()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getCount() == null ? other.getCount() == null : this.getCount().equals(other.getCount()));
     }
@@ -64,7 +64,7 @@ public class Stock implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getCommodity_code() == null) ? 0 : getCommodity_code().hashCode());
+        result = prime * result + ((getCommodityCode() == null) ? 0 : getCommodityCode().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getCount() == null) ? 0 : getCount().hashCode());
         return result;
@@ -77,7 +77,7 @@ public class Stock implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", commodity_code=").append(commodity_code);
+        sb.append(", commodity_code=").append(commodityCode);
         sb.append(", name=").append(name);
         sb.append(", count=").append(count);
         sb.append(", serialVersionUID=").append(serialVersionUID);
