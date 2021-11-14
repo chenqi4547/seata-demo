@@ -33,7 +33,8 @@ CREATE TABLE `t_account`
 -- Records of t_account
 -- ----------------------------
 INSERT INTO `t_account`
-VALUES ('1', '1', '4000.00');
+VALUES ('1', '1001', '4000.00');
+VALUES ('1', '1002', '4000.00');
 
 -- ----------------------------
 -- Table structure for t_order
